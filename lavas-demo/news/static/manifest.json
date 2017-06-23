@@ -1,0 +1,1 @@
+{"name":"pwa-news","short_name":"pwa-news","icons":[{"src":"/lavas-demo/news/static/img/icons/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/lavas-demo/news/static/img/icons/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],"start_url":"/lavas-demo/news/","display":"standalone","background_color":"#fff","theme_color":"#3e98f0"}
