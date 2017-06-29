@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no,minimal-ui">
+    <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
+    <style>
+        body, html {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            background: #2196f3;
+        }
+
+        #text {
+            width: 320px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            font-size: 24px;
+            line-height: 30px;
+            color: #fff;
+            text-align: center;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            font-size: 18px;
+            background: #f44336;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            display: none;
+        }
+
+        button:active {
+            background: #ff1122;
+        }
+
+        #tips {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">
+        <h3>登录成功</h3>
+        <h5>你好，<span id="name"></span></h5>
+        <button id="btn">退出登录</button>
+        <p id="tips">您当前浏览器不支持凭证管理 API</p>
+    </div>
+    <script>
+        let match = window.location.search.match(/username=(.+?)($|&)/);
+
+        if (match) {
+            let $name = document.getElementById('name');
+            $name.innerText = decodeURIComponent(match[1]);
+        }
+
+        if (navigator.credentials) {
+            let $btn = document.getElementById('btn');
+            $btn.style.display = 'inline-block';
+
+            $btn.addEventListener('click', () => {
+                // 注销凭证
+                navigator.credentials.requireUserMediation()
+                    .then(afterLogout)
+                    .catch(afterLogout);
+            });
+        }
+        else {
+            let $tips = document.getElementById('tips');
+            $tips.style.display = 'block';
+        }
+
+        function afterLogout() {
+            let match = window.location.search.match(/from=(.+?)($|&)/);
+            let page = match ? match[1] : 'login';
+
+            window.location.href = './' + page + '.html';
+        }
+    </script>
+</body>
+</html>

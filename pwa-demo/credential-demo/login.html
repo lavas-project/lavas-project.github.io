@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no,minimal-ui">
+    <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+<body>
+    <div class="form">
+        <h3>登录网站</h3>
+        <p>
+            <label>用户名</label>
+            <input type="text" id="usr">
+        </p>
+        <p>
+            <label>密&ensp;&ensp;码</label>
+            <input type="password" id="pwd">
+        </p>
+        <button id="btn">登录</button>
+        <p id="tips">您当前浏览器不支持凭证管理 API</p>
+    </div>
+    <script>
+        let usr = document.getElementById('usr');
+        let pwd = document.getElementById('pwd');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', () => {
+            fetch('./login.json')
+            .then(res => {
+                if (res.status === 200) {
+                    return res.json();
+                }
+
+                return Promise.reject(res.status);
+            })
+            .then(data => {
+                if (navigator.credentials) {
+                    let cred = new PasswordCredential({
+                        id: usr.value,
+                        password: pwd.value,
+                        name: data.name,
+                        iconURL: data.icon
+                    });
+                    return navigator.credentials.store(cred)
+                        .then(() => {
+                            return data;
+                        });
+                }
+
+                return Promise.resolve(data);
+            })
+            .then(data => {
+                window.location.href = './main.html?from=login&username=' + data.name;
+            });
+        });
+
+        if (navigator.credentials) {
+            navigator.credentials.get({
+                password: true
+            })
+            .then(cred => {
+                if (cred) {
+
+                    switch (cred.type) {
+                        case 'password':
+                            usr.value = cred.id;
+                            pwd.value = cred.password;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+        }
+        else {
+            let $tips = document.getElementById('tips');
+            $tips.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

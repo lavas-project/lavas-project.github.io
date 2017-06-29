@@ -1,0 +1,29 @@
+{
+    "short_name": "最小化模式",
+    "name": "这是一个完整名称",
+    "icons": [
+        {
+            "src": "../../images/logo-48x48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "../../images/logo-96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "../../images/logo-144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "../../images/logo-188x188.png",
+            "type": "image/png",
+            "sizes": "188x188"
+        }
+    ],
+    "start_url": "./index.html",
+    "background_color": "#2196f3",
+    "display": "minimal-ui"
+}

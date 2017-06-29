@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no,minimal-ui">
+    <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+<body>
+    <div class="form">
+        <h3>第三方登录</h3>
+        <p>
+            <button id="login-btn" data-provider="https://www.baidu.com">百度登录</button>
+        </p>
+    </div>
+    <script>
+        let $btn = document.getElementById('login-btn');
+
+        $btn.addEventListener('click', function () {
+            let provider = this.dataset.provider;
+            // 假装 fetch('./third-party.json') 是调用百度第三方登录的过程
+            fetch('./third-party.json')
+            .then(res => {
+                if (res.status === 200) {
+                    return res.json();
+                }
+
+                return Promise.reject(res.status);
+            })
+            .then(data => {
+                if (navigator.credentials) {
+                    let cred = new FederatedCredential({
+                        id: data.uid,
+                        provider: provider,
+                        name: data.name,
+                        iconURL: data.icon
+                    });
+                    return navigator.credentials.store(cred)
+                        .then(() => {
+                            return data;
+                        });
+                }
+
+                return Promise.resolve(data);
+            })
+            .then(data => {
+                window.location.href = './main.html?from=third-party&username=' + data.name;
+            });
+        });
+
+        if (navigator.credentials) {
+            navigator.credentials.get({
+                password: true,
+                federated: {
+                    providers: ['https://www.baidu.com']
+                }
+            })
+            .then(cred => {
+                if (cred) {
+                    switch (cred.type) {
+                        case 'federated':
+                            // FederatedCredential 凭证处理
+                            switch (cred.provider) {
+                                case 'https://www.baidu.com':
+                                    // 调起百度第三方登录
+                                    window.location.href = './main.html?from=third-party&username=' + cred.name;
+                            }
+                    }
+                }
+            });
+        }
+        else {
+            let $tips = document.getElementById('tips');
+            $tips.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
