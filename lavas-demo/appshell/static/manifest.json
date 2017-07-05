@@ -1,6 +1,6 @@
 {
-  "name": "appshell-demo",
-  "short_name": "appshell-demo",
+  "name": "appshelldemo",
+  "short_name": "appshelldemo",
   "icons": [
     {
       "src": "/lavas-demo/appshell/static/img/icons/android-chrome-192x192.png",
@@ -12,7 +12,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/lavas-demo/appshell/",
   "background_color": "#000000",
   "display": "standalone",
   "theme_color": "#2874f0"
