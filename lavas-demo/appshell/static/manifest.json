@@ -12,7 +12,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/lavas-demo/appshell/",
   "background_color": "#000000",
   "display": "standalone",
   "theme_color": "#2874f0"
