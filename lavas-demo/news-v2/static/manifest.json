@@ -12,7 +12,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "/lavas-demo/news-v2/",
   "background_color": "#2874f0",
   "display": "standalone",
   "theme_color": "#2874f0"
