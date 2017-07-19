@@ -1,19 +1,19 @@
 {
-  "name": "news",
-  "short_name": "news",
+  "name": "百度新闻",
+  "short_name": "百度新闻",
   "icons": [
     {
-      "src": "/lavas-demo/news-v2/static/img/icons/android-chrome-192x192.png",
+      "src": "/lavas-demo/news-v2/static/img/icons/news-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     }, {
-      "src": "/lavas-demo/news-v2/static/img/icons/android-chrome-512x512.png",
+      "src": "/lavas-demo/news-v2/static/img/icons/news-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
   "start_url": "/lavas-demo/news-v2/",
-  "background_color": "#2874f0",
+  "background_color": "#fff",
   "display": "standalone",
   "theme_color": "#2874f0"
 }
