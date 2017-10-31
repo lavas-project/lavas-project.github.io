@@ -7876,7 +7876,7 @@ self.addEventListener('install', function (event) {
         _store.featureStore.setItem('caches', 1);
     }
 
-    var baseUrl = '/cache/';
+    var baseUrl = "/pwa-test" + '/cache/';
 
     /* eslint-disable fecs-max-statements */
     event.waitUntil((0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
@@ -7973,7 +7973,7 @@ self.addEventListener('install', function (event) {
                     case 44:
                         matchCacheData = _context.sent;
 
-                        value = Number(matchCacheData.data === urlPut);
+                        value = Number(matchCacheData.data === 'put');
                         _context.next = 48;
                         return _store.featureStore.setItem('cache.put', value);
 
@@ -8000,7 +8000,7 @@ self.addEventListener('install', function (event) {
                     case 58:
                         matchCachesData = _context.sent;
 
-                        value = Number(matchCachesData.data === urlPut);
+                        value = Number(matchCachesData.data === 'put');
                         _context.next = 62;
                         return _store.featureStore.setItem('cache.add', value);
 
@@ -8088,7 +8088,7 @@ self.addEventListener('install', function (event) {
                     case 105:
                         matchCacheData = _context.sent;
 
-                        value = Number(matchCacheData.data === urlAdd);
+                        value = Number(matchCacheData.data === 'add');
                         _context.next = 109;
                         return _store.featureStore.setItem('cache.add', value);
 
