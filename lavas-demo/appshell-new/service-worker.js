@@ -22,7 +22,7 @@ const workboxSW = new WorkboxSW({
 workboxSW.precache([
   {
     "url": "/lavas-demo/appshell-new/index.html",
-    "revision": "eb5ee38648987aac2bea4240806f9341"
+    "revision": "103d73db7e1b9e26b77453d09dffa0c6"
   },
   {
     "url": "/lavas-demo/appshell-new/static/css/index.ed5c7c4c.css"
@@ -42,10 +42,10 @@ workboxSW.precache([
     "revision": "012cf6a10129e2275d79d6adac7f3b02"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/index.1e42e9ea.js"
+    "url": "/lavas-demo/appshell-new/static/js/index.db3e4d48.js"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/manifest.c60a34ca.js"
+    "url": "/lavas-demo/appshell-new/static/js/manifest.20814d6b.js"
   },
   {
     "url": "/lavas-demo/appshell-new/static/js/vendor.ded9ba07.js"
@@ -56,10 +56,6 @@ workboxSW.precache([
   {
     "url": "/lavas-demo/appshell-new/static/js/workbox-sw.prod.v2.1.2.js",
     "revision": "685d1ceb6b9a9f94aacf71d6aeef8b51"
-  },
-  {
-    "url": "/appshell",
-    "revision": "59efa4bcf555311329c9f3ae732b2b51"
   }
 ]);
 
