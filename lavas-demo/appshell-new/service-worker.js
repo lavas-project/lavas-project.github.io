@@ -22,7 +22,7 @@ const workboxSW = new WorkboxSW({
 workboxSW.precache([
   {
     "url": "/lavas-demo/appshell-new/index.html",
-    "revision": "27f3926cff3c8ae8040484e78de13cc3"
+    "revision": "eb5ee38648987aac2bea4240806f9341"
   },
   {
     "url": "/lavas-demo/appshell-new/static/css/index.ed5c7c4c.css"
@@ -42,10 +42,10 @@ workboxSW.precache([
     "revision": "012cf6a10129e2275d79d6adac7f3b02"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/index.009ba3ac.js"
+    "url": "/lavas-demo/appshell-new/static/js/index.1e42e9ea.js"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/manifest.cfcd855d.js"
+    "url": "/lavas-demo/appshell-new/static/js/manifest.c60a34ca.js"
   },
   {
     "url": "/lavas-demo/appshell-new/static/js/vendor.ded9ba07.js"
@@ -59,9 +59,9 @@ workboxSW.precache([
   },
   {
     "url": "/appshell",
-    "revision": "a3a7382415886137f13607009bce534a"
+    "revision": "59efa4bcf555311329c9f3ae732b2b51"
   }
 ]);
 
 // Define response for HTML request.
-workboxSW.router.registerNavigationRoute('/appshell');
+workboxSW.router.registerNavigationRoute('/lavas-demo/appshell-new/index.html');
