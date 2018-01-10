@@ -1,27 +1,27 @@
 {
     "start_url": "/?utm_source=homescreen",
-    "name": "gaga",
-    "short_name": "gaga",
+    "name": "lavas demo",
+    "short_name": "lavas demo",
     "icons": [
         {
             "src": "img/icons/android-chrome-512x512.png",
             "type": "image/png",
-            "size": "512x512"
+            "sizes": "512x512"
         },
         {
             "src": "img/icons/android-chrome-192x192.png",
             "type": "image/png",
-            "size": "192x192"
+            "sizes": "192x192"
         },
         {
             "src": "img/icons/apple-touch-icon-180x180.png",
             "type": "image/png",
-            "size": "180x180"
+            "sizes": "180x180"
         },
         {
             "src": "img/icons/apple-touch-icon-152x152.png",
             "type": "image/png",
-            "size": "152x152"
+            "sizes": "152x152"
         }
     ],
     "display": "standalone",

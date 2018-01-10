@@ -1,4 +1,4 @@
-/**
+importScripts('/lavas-demo/appshell-new/static/js/workbox-sw.prod.v2.1.2.js');/**
  * @file service-worker.js with workbox api
  * @desc [example](https://workbox-samples.glitch.me/examples/workbox-sw/)
  * @author chenqiushi(chenqiushi@baidu.com)
@@ -22,10 +22,10 @@ const workboxSW = new WorkboxSW({
 workboxSW.precache([
   {
     "url": "/lavas-demo/appshell-new/index.html",
-    "revision": "103d73db7e1b9e26b77453d09dffa0c6"
+    "revision": "f9a8eb145accedf358b70b7e27b640ed"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/css/index.ed5c7c4c.css"
+    "url": "/lavas-demo/appshell-new/static/css/index.15045866.css"
   },
   {
     "url": "/lavas-demo/appshell-new/static/fonts/MaterialIcons-Regular.012cf6a1.woff"
@@ -42,16 +42,16 @@ workboxSW.precache([
     "revision": "012cf6a10129e2275d79d6adac7f3b02"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/index.db3e4d48.js"
+    "url": "/lavas-demo/appshell-new/static/js/index.0af15e09.js"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/manifest.20814d6b.js"
+    "url": "/lavas-demo/appshell-new/static/js/manifest.4cf80107.js"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/vendor.ded9ba07.js"
+    "url": "/lavas-demo/appshell-new/static/js/vendor.094fb639.js"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/vue.be7f9f65.js"
+    "url": "/lavas-demo/appshell-new/static/js/vue.366adeb2.js"
   },
   {
     "url": "/lavas-demo/appshell-new/static/js/workbox-sw.prod.v2.1.2.js",
@@ -61,3 +61,4 @@ workboxSW.precache([
 
 // Define response for HTML request.
 workboxSW.router.registerNavigationRoute('/lavas-demo/appshell-new/index.html');
+workboxSW.router.registerNavigationRoute('/index.html');
