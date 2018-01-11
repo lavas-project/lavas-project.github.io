@@ -22,10 +22,10 @@ const workboxSW = new WorkboxSW({
 workboxSW.precache([
   {
     "url": "/lavas-demo/appshell-new/index.html",
-    "revision": "a2bb78d4b344c9e4c0652d92f4a5351b"
+    "revision": "64476da6cac3a5afbd139800bc0732d7"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/css/index.15045866.css"
+    "url": "/lavas-demo/appshell-new/static/css/index.09552c9b.css"
   },
   {
     "url": "/lavas-demo/appshell-new/static/fonts/MaterialIcons-Regular.012cf6a1.woff"
@@ -42,10 +42,10 @@ workboxSW.precache([
     "revision": "012cf6a10129e2275d79d6adac7f3b02"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/index.c4d2ab98.js"
+    "url": "/lavas-demo/appshell-new/static/js/index.e1f7a3fe.js"
   },
   {
-    "url": "/lavas-demo/appshell-new/static/js/manifest.a884ab14.js"
+    "url": "/lavas-demo/appshell-new/static/js/manifest.d6d063c0.js"
   },
   {
     "url": "/lavas-demo/appshell-new/static/js/vendor.b2ce233b.js"
